@@ -11,3 +11,34 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# variables
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='vimpager'
+export TERM='rxvt-unicode'
+
+# aliases
+alias sudo='sudo '
+alias pacman='pacnanny'
+alias syu='sudo pacnanny -Syu'
+alias syua='pacaur -Syua'
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+function pp {
+    # remember output, prevent different clipboard contents
+    # after choosing to execute
+    script=$(xclip -o)
+    cat -A <<< $script
+    printf "\nExecute? (y/n): "
+    read execute
+    # only execute when 'y' was answered
+    # all other input is ignored
+    if [[ "$execute" == "y" ]]; then
+        eval "$script"
+    fi
+}
+eval "$(fasd --init auto)"

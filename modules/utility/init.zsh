@@ -49,11 +49,11 @@ alias sftp='noglob sftp'
 alias _='sudo'
 alias b='${(z)BROWSER}'
 alias cp="${aliases[cp]:-cp} -i"
-alias e='${(z)VISUAL:-${(z)EDITOR}}'
+alias e='f -e vim'
 alias ln="${aliases[ln]:-ln} -i"
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
 alias mv="${aliases[mv]:-mv} -i"
-alias p='${(z)PAGER}'
+#alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
 alias rm="${aliases[rm]:-rm} -i"
@@ -118,7 +118,7 @@ elif [[ "$OSTYPE" == cygwin* ]]; then
   alias pbcopy='tee > /dev/clipboard'
   alias pbpaste='cat /dev/clipboard'
 else
-  alias o='xdg-open'
+  alias o='a -e xdg-open'
 
   if (( $+commands[xclip] )); then
     alias pbcopy='xclip -selection clipboard -in'
