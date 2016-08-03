@@ -23,6 +23,7 @@ alias sudo='sudo '
 alias pacman='pacnanny'
 alias syu='sudo pacnanny -Syu'
 alias syua='pacaur -Syua'
+alias echol='echo ~/Downloads/$(ls -c ~/Downloads 2>/dev/null | head -1)'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
