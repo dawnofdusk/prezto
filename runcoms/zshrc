@@ -62,7 +62,7 @@ cf() {
 
 # g - use terminal as a launcher
 g() {
-  mimeopen $1 & exit
+  xdg-open $1 & exit
 }
 
 eval "$(fasd --init auto)"
