@@ -2,7 +2,8 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Customized by:
+#   Jesse Lin
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -11,11 +12,18 @@ fi
 
 # Customize to your needs...
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # variables
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='vimpager'
 export TERM='rxvt-unicode'
+
+# bindings
+bindkey -M vicmd 'K' run-help
 
 # aliases
 alias sudo='sudo '
@@ -24,10 +32,7 @@ alias syu='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && su
 alias syua='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && pacaur -Syua && sudo umount /boot'
 alias echol='echo ~/Downloads/$(ls -c ~/Downloads 2>/dev/null | head -1)'
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
+# functions
 function pp {
     # remember output, prevent different clipboard contents
     # after choosing to execute
@@ -65,4 +70,5 @@ g() {
   xdg-open $1 & exit
 }
 
+# fasd integration
 eval "$(fasd --init auto)"
