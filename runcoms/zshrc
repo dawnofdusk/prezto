@@ -32,6 +32,20 @@ alias syu='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && su
 alias syua='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && pacaur -Syua && sudo umount /boot'
 alias echol='echo ~/Downloads/$(ls -c ~/Downloads 2>/dev/null | head -1)'
 
+# urxvt window hooks
+    # Write some info to terminal title.
+    # This is seen when the shell prompts for input.
+    function _titleprecmd {
+      print -Pn "\e]0;zsh%L %(1j,%j job%(2j|s|); ,)%~\a"
+    }
+    # Write command and args to terminal title.
+    # This is seen while the shell waits for a command to complete.
+    function _titlepreexec {
+      printf "\033]0;%s\a" "$1"
+    }
+add-zsh-hook precmd _titleprecmd
+add-zsh-hook preexec _titlepreexec
+
 # functions
 function pp {
     # remember output, prevent different clipboard contents
