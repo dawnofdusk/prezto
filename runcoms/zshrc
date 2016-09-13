@@ -32,6 +32,7 @@ alias syu='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && su
 alias syua='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && pacaur -Syua && sudo umount /boot'
 alias echol='echo ~/Downloads/$(ls -c ~/Downloads 2>/dev/null | head -1)'
 alias rtach='dtach -a /tmp/dtach'
+alias cal='cal -3'
 
 # urxvt window hooks
     # Write some info to terminal title.
