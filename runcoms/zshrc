@@ -26,8 +26,8 @@ export TERM='rxvt-unicode'
 bindkey -M vicmd 'K' run-help
 
 # aliases
-alias sudo='sudo '
-alias pacman='pacnanny'
+alias sudo='nocorrect sudo'
+#alias pacman='pacnanny'
 alias syu='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && sudo pacnanny -Syu && sudo umount /boot'
 alias syua='trap "sudo umount /boot" EXIT SIGINT SIGTERM ; sudo mount /boot && pacaur -Syua && sudo umount /boot'
 alias echol='echo ~/Downloads/$(ls -c ~/Downloads 2>/dev/null | head -1)'
