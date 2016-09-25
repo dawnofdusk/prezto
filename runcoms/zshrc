@@ -51,7 +51,28 @@ function x {
 add-zsh-hook precmd _titleprecmd
 add-zsh-hook preexec _titlepreexec
 
+#
 # functions
+#
+
+# updating
+function syu {
+	trap "sudo umount /boot" EXIT SIGINT SIGTERM
+	if [ -n $(ls -A /boot 2> /dev/null)  ]
+	then
+		sudo mount /boot &&
+	fi
+	sudo pacnanny -Syu
+}
+function syua {
+	trap "sudo umount /boot" EXIT SIGINT SIGTERM
+	if [ -n $(ls -A /boot 2> /dev/null)  ]
+	then
+		sudo mount /boot &&
+	fi
+	pacaur -Syua
+}
+# secure paste
 function pp {
     # remember output, prevent different clipboard contents
     # after choosing to execute
