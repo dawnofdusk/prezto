@@ -198,3 +198,11 @@ function find-exec {
 function psu {
   ps -U "${1:-$LOGNAME}" -o 'pid,%cpu,%mem,command' "${(@)argv[2,-1]}"
 }
+
+#
+# Jesse's custom functions
+#
+function ipbc {
+	imgtype=$(file -b --mime-type "$1")
+	xclip -selection clipboard -t "$imgtype" -in < "$1"
+}
