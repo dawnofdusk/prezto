@@ -24,6 +24,7 @@ export TERM='rxvt-unicode'
 
 # bindings
 bindkey -M vicmd 'K' run-help
+bindkey -M vicmd '' accept-line-and-down-history
 
 # aliases
 alias sudo='nocorrect sudo'
