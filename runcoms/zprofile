@@ -19,7 +19,13 @@ fi
 
 export EDITOR='vim'
 export VISUAL='vim'
-export PAGER='vimpager'
+export PAGER='less'
+
+#
+# term
+#
+
+export TERM='rxvt-unicode'
 
 #
 # Language
