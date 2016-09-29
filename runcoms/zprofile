@@ -25,7 +25,7 @@ export PAGER='less'
 # term
 #
 
-export TERM='rxvt-unicode'
+#export TERM='rxvt-unicode'
 
 #
 # Language
