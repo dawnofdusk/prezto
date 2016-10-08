@@ -52,6 +52,11 @@ x() {
 add-zsh-hook precmd _titleprecmd
 add-zsh-hook preexec _titlepreexec
 
+#_tmuxstatusprecmd() {
+#    tmux set -qg status-right "#[fg=blue] #(pwd) #[fg=yellow] %d %b %Y #[fg=green] %l:%M %p"
+#}
+#add-zsh-hook precmd _tmuxstatusprecmd
+
 #
 # functions
 #
