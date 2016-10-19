@@ -63,7 +63,7 @@ add-zsh-hook preexec _titlepreexec
 
 # updating
 syu() {
-	trap "sudo umount /boot" EXIT SIGINT SIGTERM
+	trap "echo 'Unmounting /boot' ; sudo umount /boot" EXIT SIGINT SIGTERM
 	if [ -n $(ls -A /boot 2> /dev/null)  ]
 	then
 		sudo mount /boot &&
@@ -71,7 +71,7 @@ syu() {
 	sudo pacnanny -Syu
 }
 syua() {
-	trap "sudo umount /boot" EXIT SIGINT SIGTERM
+	trap "echo 'Unmounting /boot' ; sudo umount /boot" EXIT SIGINT SIGTERM
 	if [ -n $(ls -A /boot 2> /dev/null)  ]
 	then
 		sudo mount /boot &&
