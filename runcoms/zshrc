@@ -118,3 +118,4 @@ g() {
 
 # fasd integration
 eval "$(fasd --init auto)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
