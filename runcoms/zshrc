@@ -116,7 +116,7 @@ cf() {
 g() {
   xdg-open $1 & exit
 }
-alias ge='g $(echol)'
+alias ge='g '$(echol)''
 
 # fasd integration
 eval "$(fasd --init auto)"
