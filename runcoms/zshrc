@@ -60,8 +60,6 @@ add-zsh-hook preexec _titlepreexec
 #
 # functions
 #
-
-# updating
 function ediff () {
     if [ "X${2}" = "X" ]; then
         echo "USAGE: ediff <FILE 1> <FILE 2>"
@@ -70,6 +68,12 @@ function ediff () {
         quoted2=${2//\\/\\\\}; quoted2=${quoted2//\"/\\\"}
         emacsclient -c -a emacs -e "(ediff \"$quoted1\" \"$quoted2\")"
     fi
+}
+
+# updating
+fedu() {
+       sudo dnf upgrade &&
+       flatpak update
 }
 syu() {
 	trap "echo 'Unmounting /boot' ; sudo umount /boot" EXIT SIGINT SIGTERM
